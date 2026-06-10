@@ -1,0 +1,152 @@
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Prevent horizontal overflow on all screens */
+html, body { overflow-x: hidden; }
+
+/* Better tap feedback on mobile */
+* { -webkit-tap-highlight-color: rgba(36,114,181,0.1); }
+a, button { touch-action: manipulation; }
+
+/* Water ring animation */
+.water-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.15);
+  animation: pulse-ring 4s ease-out infinite;
+}
+.animation-delay-1 { animation-delay: 2s; }
+
+@keyframes pulse-ring {
+  0%   { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+
+/* Active nav link */
+.nav-active { color: #2472B5 !important; font-weight: 600; }
+
+/* Form focus ring uses brand colour */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #2472B5;
+  box-shadow: 0 0 0 3px rgba(36,114,181,0.15);
+}
+
+/* Scroll fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in.delay-1 { transition-delay: 0.1s; }
+.fade-in.delay-2 { transition-delay: 0.2s; }
+.fade-in.delay-3 { transition-delay: 0.3s; }
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { opacity: 1; transform: none; transition: none; }
+}
+
+/* Back to top button */
+#back-top {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(8px);
+}
+#back-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* WhatsApp pulse */
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  50%       { box-shadow: 0 0 0 10px rgba(37,211,102,0); }
+}
+#whatsapp-btn { animation: wa-pulse 2.5s infinite; }
+
+/* ── Massive Animations ── */
+
+/* Counter number roll-up */
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.stat-num { animation: count-up 0.8s ease forwards; }
+
+/* Hero text slide-in */
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-in-up {
+  from { opacity: 0; transform: translateY(50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-title  { animation: slide-in-left  0.9s ease both; }
+.hero-sub    { animation: slide-in-left  0.9s 0.2s ease both; }
+.hero-btns   { animation: slide-in-up    0.9s 0.4s ease both; }
+.hero-stats  { animation: slide-in-up    0.9s 0.6s ease both; }
+.hero-img    { animation: slide-in-right 1.0s 0.3s ease both; }
+
+/* Floating animation for hero illustration */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-16px); }
+}
+.hero-float { animation: float 4s ease-in-out infinite; }
+
+/* Project & gallery card zoom-in */
+@keyframes zoom-in {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.fade-in.visible { animation: zoom-in 0.5s ease both; opacity: 1; transform: none; }
+
+/* Service icon spin on hover */
+.service-card:hover .service-icon {
+  animation: spin-once 0.5s ease;
+}
+@keyframes spin-once {
+  from { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(180deg) scale(1.2); }
+  to   { transform: rotate(360deg) scale(1); }
+}
+
+/* Testimonial slide in */
+@keyframes slide-fade {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.testi-card { opacity: 0; }
+.testi-card.visible { animation: slide-fade 0.6s ease forwards; }
+
+/* Team card pop */
+@keyframes pop-in {
+  0%   { opacity: 0; transform: scale(0.7) translateY(30px); }
+  70%  { transform: scale(1.05) translateY(-4px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.team-card { opacity: 0; }
+.team-card.visible { animation: pop-in 0.5s cubic-bezier(.36,.07,.19,.97) forwards; }
+
+/* Navbar logo water-drop pulse */
+@keyframes drop-pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+header a .rounded-full { animation: drop-pulse 3s ease-in-out infinite; }
+
+/* Ensure minimum touch target on mobile */
+@media (max-width: 639px) {
+  a[href^="#"], button[type] { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  nav a[href^="#"] { min-height: unset; display: inline; }
+}
