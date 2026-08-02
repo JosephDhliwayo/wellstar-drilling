@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.suspended-body {
+  background: #1a2744;
+  color: #f5f7fa;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.suspended-card {
+  max-width: 480px;
+}
+
+.suspended-card h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.suspended-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+}
+
+.suspended-card a {
+  color: #7abbd8;
+  text-decoration: none;
+}
+
+.suspended-card a:hover {
+  text-decoration: underline;
+}

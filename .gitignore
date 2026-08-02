@@ -3,3 +3,17 @@ Thumbs.db
 desktop.ini
 .DS_Store
 *.lnk
+
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
