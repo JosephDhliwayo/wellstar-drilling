@@ -1042,13 +1042,13 @@ export default function Home() {
                 type="submit"
                 className="w-full bg-primary text-white font-semibold py-3.5 rounded-xl hover:bg-primary-dark transition-colors shadow-sm"
               >
-                Send Enquiry
+                Send Enquiry via WhatsApp
               </button>
               <p
                 id="form-success"
                 className="hidden text-center text-green-600 text-sm font-medium"
               >
-                Thank you! We&apos;ll be in touch within 24 hours.
+                Opening WhatsApp…
               </p>
             </form>
           </div>

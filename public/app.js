@@ -37,23 +37,36 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(s => observer.observe(s));
 
-// Contact form — demo submission
+// Contact form — redirect to WhatsApp with the enquiry pre-filled
 const form    = document.getElementById('contact-form');
 const success = document.getElementById('form-success');
+const WHATSAPP_NUMBER = '263783519420';
 
 form.addEventListener('submit', e => {
   e.preventDefault();
-  const btn = form.querySelector('button[type="submit"]');
-  btn.textContent = 'Sending…';
-  btn.disabled = true;
 
-  setTimeout(() => {
-    form.reset();
-    btn.textContent = 'Send Enquiry';
-    btn.disabled = false;
-    success.classList.remove('hidden');
-    setTimeout(() => success.classList.add('hidden'), 5000);
-  }, 1200);
+  const name     = document.getElementById('name').value.trim();
+  const phone    = document.getElementById('phone').value.trim();
+  const email    = document.getElementById('email').value.trim();
+  const service  = document.getElementById('service').value;
+  const location = document.getElementById('location').value.trim();
+  const message  = document.getElementById('message').value.trim();
+
+  const lines = [
+    'Hello Wellstar Drilling, I would like to request a quote.',
+    '',
+    `Name: ${name}`,
+  ];
+  if (phone) lines.push(`Phone: ${phone}`);
+  lines.push(`Email: ${email}`);
+  if (service) lines.push(`Service: ${service}`);
+  if (location) lines.push(`Location: ${location}`);
+  if (message) lines.push(`Details: ${message}`);
+
+  const text = encodeURIComponent(lines.join('\n'));
+  success.classList.remove('hidden');
+
+  window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
 });
 
 // Back to top
