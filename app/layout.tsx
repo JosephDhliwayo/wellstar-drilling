@@ -1,9 +1,18 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-inter",
+});
+
 export const metadata: Metadata = {
-  title: "Site Temporarily Suspended",
-  robots: { index: false, follow: false },
+  title: "Wellstar Drilling – Borehole Specialists in Zimbabwe",
+  description:
+    "Wellstar Drilling provides professional borehole drilling, pump installation, and water solutions across Zimbabwe.",
+  icons: { icon: "/images/logo3.png" },
 };
 
 export default function RootLayout({
@@ -13,7 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body
+        className={`${inter.variable} font-sans text-gray-800 antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

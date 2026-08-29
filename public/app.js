@@ -19,6 +19,8 @@ function closeMenu() {
   iconClose.classList.add('hidden');
 }
 
+mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+
 // Highlight active nav link on scroll
 const sections = document.querySelectorAll('section[id]');
 const navLinks  = document.querySelectorAll('header nav a[href^="#"]');
