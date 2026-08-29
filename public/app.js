@@ -45,12 +45,12 @@ const WHATSAPP_NUMBER = '263783519420';
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  const name     = document.getElementById('name').value.trim();
-  const phone    = document.getElementById('phone').value.trim();
-  const email    = document.getElementById('email').value.trim();
-  const service  = document.getElementById('service').value;
-  const location = document.getElementById('location').value.trim();
-  const message  = document.getElementById('message').value.trim();
+  const name            = document.getElementById('name').value.trim();
+  const phone           = document.getElementById('phone').value.trim();
+  const email           = document.getElementById('email').value.trim();
+  const service         = document.getElementById('service').value;
+  const propertyLocation = document.getElementById('location').value.trim();
+  const message         = document.getElementById('message').value.trim();
 
   const lines = [
     'Hello Wellstar Drilling, I would like to request a quote.',
@@ -60,13 +60,14 @@ form.addEventListener('submit', e => {
   if (phone) lines.push(`Phone: ${phone}`);
   lines.push(`Email: ${email}`);
   if (service) lines.push(`Service: ${service}`);
-  if (location) lines.push(`Location: ${location}`);
+  if (propertyLocation) lines.push(`Location: ${propertyLocation}`);
   if (message) lines.push(`Details: ${message}`);
 
   const text = encodeURIComponent(lines.join('\n'));
   success.classList.remove('hidden');
+  setTimeout(() => success.classList.add('hidden'), 6000);
 
-  window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank', 'noopener');
 });
 
 // Back to top

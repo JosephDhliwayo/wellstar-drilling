@@ -1048,7 +1048,7 @@ export default function Home() {
                 id="form-success"
                 className="hidden text-center text-green-600 text-sm font-medium"
               >
-                Opening WhatsApp…
+                Opening WhatsApp in a new tab…
               </p>
             </form>
           </div>
