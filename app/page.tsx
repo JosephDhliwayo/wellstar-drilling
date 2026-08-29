@@ -175,21 +175,35 @@ export default function Home() {
               </div>
 
               {/* Stats */}
-              <div className="mt-8 sm:mt-12 grid grid-cols-3 gap-3 sm:gap-6">
+              <div className="hero-stats mt-8 sm:mt-12 grid grid-cols-3 gap-3 sm:gap-6">
                 <div>
-                  <p className="text-xl sm:text-3xl font-extrabold">2000+</p>
+                  <p className="text-xl sm:text-3xl font-extrabold">
+                    <span className="stat-num" data-target="2000">
+                      0
+                    </span>
+                    +
+                  </p>
                   <p className="text-white/70 text-xs sm:text-sm mt-1">
                     Boreholes Drilled
                   </p>
                 </div>
                 <div>
-                  <p className="text-xl sm:text-3xl font-extrabold">5+</p>
+                  <p className="text-xl sm:text-3xl font-extrabold">
+                    <span className="stat-num" data-target="5">
+                      0
+                    </span>
+                    +
+                  </p>
                   <p className="text-white/70 text-xs sm:text-sm mt-1">
                     Years Experience
                   </p>
                 </div>
                 <div>
-                  <p className="text-xl sm:text-3xl font-extrabold">10</p>
+                  <p className="text-xl sm:text-3xl font-extrabold">
+                    <span className="stat-num" data-target="10">
+                      0
+                    </span>
+                  </p>
                   <p className="text-white/70 text-xs sm:text-sm mt-1">
                     Provinces Covered
                   </p>
@@ -199,7 +213,7 @@ export default function Home() {
 
             {/* Hero illustration */}
             <div className="hidden lg:flex justify-center">
-              <div className="relative w-80 h-80">
+              <div className="relative w-80 h-80 hero-float">
                 <div className="absolute inset-0 rounded-full bg-white/10 blur-2xl" />
                 <div className="relative w-80 h-80 rounded-full bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center">
                   <svg
@@ -320,7 +334,7 @@ export default function Home() {
       <section id="about" className="py-14 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
+            <div className="relative fade-in">
               <div className="rounded-3xl overflow-hidden h-96 shadow-lg bg-white flex items-center justify-center p-10 border border-gray-100">
                 <img
                   src="/images/logo.jpg"
@@ -337,7 +351,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div>
+            <div className="fade-in delay-2">
               <span className="text-accent font-semibold text-sm uppercase tracking-widest">
                 Who We Are
               </span>
@@ -485,7 +499,7 @@ export default function Home() {
       {/* ===== SERVICES ===== */}
       <section id="services" className="py-14 sm:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-16 fade-in">
             <span className="text-accent font-semibold text-sm uppercase tracking-widest">
               What We Do
             </span>
@@ -525,12 +539,12 @@ export default function Home() {
                 desc: "Restore an old or under-performing borehole through development, airlifting, and re-equipping to bring it back to full productivity.",
                 path: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z",
               },
-            ].map((service) => (
+            ].map((service, i) => (
               <div
                 key={service.title}
-                className="service-card fade-in bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                className={`service-card fade-in ${["", "delay-1", "delay-2"][i % 3]} bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300`}
               >
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                <div className="service-icon w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                   <svg
                     className="w-7 h-7 text-primary"
                     fill="none"
@@ -553,8 +567,8 @@ export default function Home() {
                 </p>
               </div>
             ))}
-            <div className="service-card fade-in bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+            <div className="service-card fade-in delay-3 bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+              <div className="service-icon w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                 <svg
                   className="w-7 h-7 text-primary"
                   fill="none"
@@ -593,7 +607,7 @@ export default function Home() {
       {/* ===== PROJECTS / GALLERY ===== */}
       <section id="projects" className="py-14 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-16 fade-in">
             <span className="text-accent font-semibold text-sm uppercase tracking-widest">
               Our Work
             </span>
@@ -650,10 +664,10 @@ export default function Home() {
                 desc: "Afridev hand pump with concrete apron and drainage channel",
                 objectTop: true,
               },
-            ].map((project) => (
+            ].map((project, i) => (
               <div
                 key={project.title}
-                className="group relative rounded-2xl overflow-hidden h-72 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className={`group relative rounded-2xl overflow-hidden h-72 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 fade-in ${["", "delay-1", "delay-2"][i % 3]}`}
               >
                 <img
                   src={`/images/${project.img}`}
@@ -688,7 +702,7 @@ export default function Home() {
       {/* ===== GALLERY ===== */}
       <section id="gallery" className="py-14 sm:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-16 fade-in">
             <span className="text-accent font-semibold text-sm uppercase tracking-widest">
               Behind The Work
             </span>
@@ -718,10 +732,10 @@ export default function Home() {
                 img: "photo-18.jpg",
                 alt: "Pump testing and water level measurement",
               },
-            ].map((item) => (
+            ].map((item, i) => (
               <div
                 key={item.img}
-                className="group relative overflow-hidden rounded-xl aspect-square"
+                className={`group relative overflow-hidden rounded-xl aspect-square fade-in ${["", "delay-1", "delay-2", "delay-3"][i % 4]}`}
               >
                 <img
                   src={`/images/${item.img}`}
@@ -739,7 +753,7 @@ export default function Home() {
       {/* ===== TESTIMONIALS ===== */}
       <section className="py-20 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 fade-in">
             <span className="text-accent-light font-semibold text-sm uppercase tracking-widest">
               Testimonials
             </span>
@@ -770,10 +784,10 @@ export default function Home() {
                 quote:
                   "The solar pump system they installed has transformed our community. We no longer walk 5 km for water. Wellstar changed our lives — God bless them.",
               },
-            ].map((t) => (
+            ].map((t, i) => (
               <div
                 key={t.initials}
-                className="bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20"
+                className={`bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20 fade-in ${["", "delay-1", "delay-2"][i % 3]}`}
               >
                 <div className="flex gap-1 mb-4">
                   <span className="text-yellow-400">★★★★★</span>
@@ -799,7 +813,7 @@ export default function Home() {
       {/* ===== CONTACT ===== */}
       <section id="contact" className="py-14 sm:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-16 fade-in">
             <span className="text-accent font-semibold text-sm uppercase tracking-widest">
               Get In Touch
             </span>
@@ -814,7 +828,7 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact info */}
-            <div className="space-y-8">
+            <div className="space-y-8 fade-in">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
                   <svg
@@ -927,7 +941,7 @@ export default function Home() {
             {/* Form */}
             <form
               id="contact-form"
-              className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 space-y-5"
+              className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 space-y-5 fade-in delay-2"
             >
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
