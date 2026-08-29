@@ -1046,9 +1046,20 @@ export default function Home() {
               </button>
               <p
                 id="form-success"
-                className="hidden text-center text-green-600 text-sm font-medium"
+                className="hidden text-center text-sm font-medium space-y-1"
               >
-                Opening WhatsApp in a new tab…
+                <span className="block text-green-600">
+                  Opening WhatsApp…
+                </span>
+                <a
+                  id="form-success-link"
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  className="block text-primary hover:underline"
+                >
+                  Didn&apos;t open? Tap here to continue in WhatsApp
+                </a>
               </p>
             </form>
           </div>

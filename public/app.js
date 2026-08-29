@@ -38,8 +38,9 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(s => observer.observe(s));
 
 // Contact form — redirect to WhatsApp with the enquiry pre-filled
-const form    = document.getElementById('contact-form');
-const success = document.getElementById('form-success');
+const form         = document.getElementById('contact-form');
+const success      = document.getElementById('form-success');
+const successLink  = document.getElementById('form-success-link');
 const WHATSAPP_NUMBER = '263783519420';
 
 form.addEventListener('submit', e => {
@@ -64,10 +65,12 @@ form.addEventListener('submit', e => {
   if (message) lines.push(`Details: ${message}`);
 
   const text = encodeURIComponent(lines.join('\n'));
-  success.classList.remove('hidden');
-  setTimeout(() => success.classList.add('hidden'), 6000);
+  const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
 
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank', 'noopener');
+  successLink.href = waUrl;
+  success.classList.remove('hidden');
+
+  window.location.href = waUrl;
 });
 
 // Back to top
