@@ -6,7 +6,7 @@ export default function Home() {
       {/* ===== NAVBAR ===== */}
       <header
         id="navbar"
-        className="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur shadow-sm"
+        className="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white/70 backdrop-blur-xl border-b border-black/5"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           {/* Logo */}
@@ -14,14 +14,14 @@ export default function Home() {
             <img
               src="/images/logo3.png"
               alt="Wellstar Drilling icon"
-              className="h-11 w-11 rounded-full object-cover shadow-md group-hover:scale-110 transition-transform duration-300"
+              className="h-9 w-9 rounded-full object-cover shadow-sm group-hover:scale-110 transition-transform duration-300"
             />
             <div className="leading-none">
-              <p className="text-[#1A2744] font-extrabold text-xl tracking-widest uppercase leading-none">
+              <p className="text-[#1A2744] font-extrabold text-base tracking-widest uppercase leading-none">
                 Wellstar
               </p>
-              <p className="text-[#2472B5] font-bold text-[10px] tracking-[0.35em] uppercase mt-1 leading-none">
-                — Drilling —
+              <p className="text-[#2472B5] font-bold text-[9px] tracking-[0.3em] uppercase mt-1 leading-none">
+                Drilling
               </p>
             </div>
           </a>
@@ -55,13 +55,14 @@ export default function Home() {
             >
               Gallery
             </a>
-            <a
-              href="#contact"
-              className="bg-primary text-white px-5 py-2 rounded-full hover:bg-primary-dark transition-colors"
-            >
-              Contact Us
-            </a>
           </nav>
+
+          <a
+            href="#contact"
+            className="hidden md:inline-flex items-center gap-1.5 bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-primary-dark transition-colors shadow-sm"
+          >
+            Get a Quote <span aria-hidden="true">→</span>
+          </a>
 
           {/* Mobile hamburger */}
           <button
@@ -127,7 +128,7 @@ export default function Home() {
             href="#contact"
             className="block mt-2 bg-primary text-white text-center py-2 rounded-full"
           >
-            Contact Us
+            Get a Quote →
           </a>
         </div>
       </header>
@@ -135,198 +136,147 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <section
         id="home"
-        className="relative min-h-screen flex items-center overflow-hidden"
+        className="relative min-h-screen flex flex-col lg:flex-row overflow-hidden"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1A2744] via-[#2472B5] to-[#5AABDA] -z-10" />
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="water-ring w-[600px] h-[600px] top-[-200px] right-[-200px]" />
-          <div className="water-ring w-[400px] h-[400px] bottom-[-100px] left-[-100px] animation-delay-1" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Text */}
-            <div className="text-white">
-              <span className="inline-block bg-white/20 text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wider uppercase backdrop-blur">
-                Zimbabwe&apos;s Trusted Borehole Specialists
-              </span>
-              <h1 className="hero-title text-2xl sm:text-4xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6">
-                Clean Water <br className="hidden sm:block" />
-                Starts <span className="text-accent-light">Underground</span>
-              </h1>
-              <p className="hero-sub text-white/80 text-sm sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-lg">
-                Wellstar Drilling delivers reliable borehole drilling, pump
-                installation, and water solutions to homes, farms, and
-                businesses across Zimbabwe.
-              </p>
-              <div className="hero-btns flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <a
-                  href="#contact"
-                  className="bg-white text-primary font-semibold px-7 py-3 rounded-full shadow-lg hover:bg-gray-50 transition-colors text-center"
-                >
-                  Get a Free Quote
-                </a>
-                <a
-                  href="#services"
-                  className="border border-white/50 text-white font-semibold px-7 py-3 rounded-full hover:bg-white/10 transition-colors text-center"
-                >
-                  Our Services
-                </a>
-              </div>
-
-              {/* Stats */}
-              <div className="hero-stats mt-8 sm:mt-12 grid grid-cols-3 gap-3 sm:gap-6">
-                <div>
-                  <p className="text-xl sm:text-3xl font-extrabold">
-                    <span className="stat-num" data-target="2000">
-                      0
-                    </span>
-                    +
-                  </p>
-                  <p className="text-white/70 text-xs sm:text-sm mt-1">
-                    Boreholes Drilled
-                  </p>
-                </div>
-                <div>
-                  <p className="text-xl sm:text-3xl font-extrabold">
-                    <span className="stat-num" data-target="5">
-                      0
-                    </span>
-                    +
-                  </p>
-                  <p className="text-white/70 text-xs sm:text-sm mt-1">
-                    Years Experience
-                  </p>
-                </div>
-                <div>
-                  <p className="text-xl sm:text-3xl font-extrabold">
-                    <span className="stat-num" data-target="10">
-                      0
-                    </span>
-                  </p>
-                  <p className="text-white/70 text-xs sm:text-sm mt-1">
-                    Provinces Covered
-                  </p>
-                </div>
-              </div>
+        {/* Text panel */}
+        <div className="relative flex-1 bg-gradient-to-br from-[#1A2744] via-[#1A2744] to-[#2472B5] overflow-hidden">
+          <div className="water-ring w-[500px] h-[500px] top-[-180px] left-[-180px]" />
+          <div className="relative z-10 max-w-xl mx-auto lg:mx-0 lg:ml-auto px-4 sm:px-6 lg:pl-12 lg:pr-16 pt-28 pb-16 lg:py-0 lg:min-h-screen flex flex-col justify-center">
+            <span className="hero-title inline-flex items-center gap-2 text-accent-light text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+              <span className="w-6 h-px bg-accent-light" aria-hidden="true" />
+              Water Solutions For Zimbabwe
+            </span>
+            <h1 className="hero-title text-white text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-5">
+              Clean water.
+              <br />A better{" "}
+              <span className="text-accent-light">tomorrow.</span>
+            </h1>
+            <p className="hero-sub text-white/80 text-sm sm:text-lg leading-relaxed mb-8 max-w-md">
+              Borehole drilling, pump installation and water solutions for
+              homes, farms and businesses across Zimbabwe.
+            </p>
+            <div className="hero-btns flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10">
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center gap-1.5 bg-primary-light text-white font-semibold px-7 py-3 rounded-full shadow-lg hover:bg-white hover:text-primary transition-colors text-center"
+              >
+                Get a Free Quote <span aria-hidden="true">→</span>
+              </a>
+              <a
+                href="#services"
+                className="inline-flex items-center justify-center gap-1.5 border border-white/40 text-white font-semibold px-7 py-3 rounded-full hover:bg-white/10 transition-colors text-center"
+              >
+                Explore Services <span aria-hidden="true">→</span>
+              </a>
             </div>
 
-            {/* Hero illustration */}
-            <div className="hidden lg:flex justify-center">
-              <div className="relative w-80 h-80 hero-float">
-                <div className="absolute inset-0 rounded-full bg-white/10 blur-2xl" />
-                <div className="relative w-80 h-80 rounded-full bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center">
-                  <svg
-                    className="w-48 h-48 text-white"
-                    viewBox="0 0 200 200"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="92"
-                      y="10"
-                      width="16"
-                      height="120"
-                      rx="4"
-                      fill="currentColor"
-                      opacity=".9"
-                    />
-                    <rect
-                      x="70"
-                      y="30"
-                      width="60"
-                      height="8"
-                      rx="3"
-                      fill="currentColor"
-                      opacity=".7"
-                    />
-                    <rect
-                      x="78"
-                      y="50"
-                      width="44"
-                      height="8"
-                      rx="3"
-                      fill="currentColor"
-                      opacity=".7"
-                    />
-                    <rect
-                      x="60"
-                      y="70"
-                      width="80"
-                      height="10"
-                      rx="4"
-                      fill="currentColor"
-                      opacity=".8"
-                    />
-                    <path
-                      d="M88 130 L100 155 L112 130 Z"
-                      fill="currentColor"
-                      opacity=".9"
-                    />
-                    <ellipse
-                      cx="40"
-                      cy="150"
-                      rx="12"
-                      ry="16"
-                      fill="currentColor"
-                      opacity=".5"
-                    />
-                    <ellipse
-                      cx="160"
-                      cy="160"
-                      rx="10"
-                      ry="14"
-                      fill="currentColor"
-                      opacity=".4"
-                    />
-                    <ellipse
-                      cx="70"
-                      cy="175"
-                      rx="8"
-                      ry="11"
-                      fill="currentColor"
-                      opacity=".35"
-                    />
-                    <path
-                      d="M10 140 Q50 130 100 140 Q150 150 190 140"
-                      stroke="currentColor"
-                      strokeWidth={3}
-                      opacity=".6"
-                      fill="none"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M20 160 Q60 152 100 160 Q140 168 180 160"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      opacity=".4"
-                      fill="none"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M30 175 Q70 168 110 175 Q150 182 170 175"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      opacity=".3"
-                      fill="none"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </div>
+            {/* Stats */}
+            <div className="hero-stats grid grid-cols-3 gap-3 sm:gap-6 max-w-sm">
+              <div>
+                <p className="text-xl sm:text-3xl font-extrabold text-white">
+                  <span className="stat-num" data-target="2000">
+                    0
+                  </span>
+                  +
+                </p>
+                <p className="text-white/60 text-xs sm:text-sm mt-1">
+                  Boreholes Drilled
+                </p>
+              </div>
+              <div>
+                <p className="text-xl sm:text-3xl font-extrabold text-white">
+                  <span className="stat-num" data-target="5">
+                    0
+                  </span>
+                  +
+                </p>
+                <p className="text-white/60 text-xs sm:text-sm mt-1">
+                  Years Experience
+                </p>
+              </div>
+              <div>
+                <p className="text-xl sm:text-3xl font-extrabold text-white">
+                  <span className="stat-num" data-target="10">
+                    0
+                  </span>
+                </p>
+                <p className="text-white/60 text-xs sm:text-sm mt-1">
+                  Provinces Covered
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Wave divider */}
-        <div className="absolute bottom-0 inset-x-0">
-          <svg
-            viewBox="0 0 1440 80"
-            preserveAspectRatio="none"
-            className="w-full h-16 text-white fill-current"
-          >
-            <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" />
-          </svg>
+        {/* Photo panel */}
+        <div className="relative flex-1 min-h-[320px] lg:min-h-screen lg:[clip-path:polygon(6%_0,100%_0,100%_100%,0_100%)]">
+          <img
+            src="/images/photo-08.jpg"
+            alt="Wellstar Drilling rig on site"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-black/10" />
+
+          {/* Floating glass card */}
+          <div className="hero-float hidden sm:block absolute top-8 right-6 lg:top-10 lg:right-10 bg-white/80 backdrop-blur-xl border border-white/60 rounded-2xl shadow-xl px-5 py-4 max-w-[220px]">
+            <span className="block w-8 h-0.5 bg-primary-light rounded-full mb-2" />
+            <p className="font-extrabold text-primary-dark text-base leading-tight">
+              From the ground up.
+            </p>
+            <p className="text-gray-500 text-sm mt-1">
+              Water solutions that work.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WHO WE SERVE ===== */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4 sm:divide-x sm:divide-gray-100">
+            {[
+              {
+                label: "Homes",
+                path: "M3 10.5L12 3l9 7.5M5 9.5V21h14V9.5",
+              },
+              {
+                label: "Farms",
+                path: "M12 3c2 2.5 3 5 3 7a3 3 0 11-6 0c0-2 1-4.5 3-7zM12 13v8M7 21h10",
+              },
+              {
+                label: "Businesses",
+                path: "M4 21V7l8-4 8 4v14M9 21v-6h6v6M9 11h.01M15 11h.01M9 15h.01M15 15h.01",
+              },
+              {
+                label: "Communities",
+                path: "M17 20v-2a4 4 0 00-3-3.87M7 20v-2a4 4 0 013-3.87M12 11a4 4 0 100-8 4 4 0 000 8zM7 11a3 3 0 100-6M17 11a3 3 0 100-6",
+              },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="flex flex-col sm:flex-row items-center sm:justify-center gap-2 sm:gap-3 text-center sm:text-left sm:px-4"
+              >
+                <span className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <svg
+                    className="w-5 h-5 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.8}
+                      d={item.path}
+                    />
+                  </svg>
+                </span>
+                <span className="font-semibold text-gray-700 text-sm">
+                  {item.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -343,7 +293,7 @@ export default function Home() {
                   loading="lazy"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-4 bg-primary text-white rounded-2xl px-6 py-4 shadow-xl">
+              <div className="absolute -bottom-6 -right-4 bg-primary/90 backdrop-blur-xl border border-white/20 text-white rounded-2xl px-6 py-4 shadow-xl">
                 <p className="text-3xl font-extrabold">5+</p>
                 <p className="text-white/80 text-xs font-medium">
                   Years in Business
@@ -501,10 +451,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 fade-in">
             <span className="text-accent font-semibold text-sm uppercase tracking-widest">
-              What We Do
+              Our Services
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mt-2">
-              Comprehensive Water Solutions
+              Everything you need.{" "}
+              <span className="text-primary">One water partner.</span>
             </h2>
             <p className="text-gray-500 mt-4">
               From site survey to running water — we handle every step of the
@@ -542,7 +493,7 @@ export default function Home() {
             ].map((service, i) => (
               <div
                 key={service.title}
-                className={`service-card fade-in ${["", "delay-1", "delay-2"][i % 3]} bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300`}
+                className={`service-card fade-in ${["", "delay-1", "delay-2"][i % 3]} relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 pb-16 shadow-sm border border-white/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
               >
                 <div className="service-icon w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                   <svg
@@ -565,9 +516,16 @@ export default function Home() {
                 <p className="text-gray-500 text-sm leading-relaxed">
                   {service.desc}
                 </p>
+                <a
+                  href="#contact"
+                  aria-label={`Enquire about ${service.title}`}
+                  className="absolute bottom-6 right-6 w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                >
+                  <span aria-hidden="true">→</span>
+                </a>
               </div>
             ))}
-            <div className="service-card fade-in delay-3 bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+            <div className="service-card fade-in delay-3 relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 pb-16 shadow-sm border border-white/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="service-icon w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                 <svg
                   className="w-7 h-7 text-primary"
@@ -599,7 +557,53 @@ export default function Home() {
                 communities — reducing electricity costs and ensuring water
                 access even without grid power.
               </p>
+              <a
+                href="#contact"
+                aria-label="Enquire about Solar Pump Systems"
+                className="absolute bottom-6 right-6 w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+              >
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== CTA BAND ===== */}
+      <section className="relative bg-gradient-to-br from-[#1A2744] to-[#2472B5] overflow-hidden">
+        <div className="water-ring w-[400px] h-[400px] bottom-[-150px] right-[10%]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+          <div>
+            <h2 className="text-white text-2xl sm:text-3xl font-extrabold">
+              Ready to bring water closer?
+            </h2>
+            <p className="text-white/70 mt-2">
+              Let&apos;s build a cleaner, stronger Zimbabwe together.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-1.5 bg-primary-light text-white font-semibold px-7 py-3 rounded-full shadow-lg hover:bg-white hover:text-primary transition-colors"
+            >
+              Get a Quote <span aria-hidden="true">→</span>
+            </a>
+            <span className="inline-flex items-center gap-2 text-white/70 text-sm">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.8}
+                  d="M3 12h18M12 3a15.3 15.3 0 014 9 15.3 15.3 0 01-4 9 15.3 15.3 0 01-4-9 15.3 15.3 0 014-9z"
+                />
+              </svg>
+              wellstardrilling.com
+            </span>
           </div>
         </div>
       </section>
