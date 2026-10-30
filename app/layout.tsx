@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   title: "Wellstar Drilling – Borehole Specialists in Zimbabwe",
   description:
     "Wellstar Drilling provides professional borehole drilling, pump installation, and water solutions across Zimbabwe.",
-  icons: { icon: "/images/logo3.png" },
 };
 
 export default function RootLayout({

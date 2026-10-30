@@ -218,7 +218,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-black/10" />
 
           {/* Floating glass card */}
-          <div className="hero-float hidden sm:block absolute top-8 right-6 lg:top-10 lg:right-10 bg-white/80 backdrop-blur-xl border border-white/60 rounded-2xl shadow-xl px-5 py-4 max-w-[220px]">
+          <div className="hero-float glass-strong hidden sm:block absolute top-8 right-6 lg:top-10 lg:right-10 rounded-2xl shadow-xl px-5 py-4 max-w-[220px]">
             <span className="block w-8 h-0.5 bg-primary-light rounded-full mb-2" />
             <p className="font-extrabold text-primary-dark text-base leading-tight">
               From the ground up.
@@ -281,11 +281,16 @@ export default function Home() {
       </section>
 
       {/* ===== ABOUT ===== */}
-      <section id="about" className="py-14 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        id="about"
+        className="relative overflow-hidden py-14 sm:py-24 bg-white"
+      >
+        <div className="blob w-[420px] h-[420px] bg-primary-light/25 top-[-120px] right-[-120px]" />
+        <div className="blob w-[320px] h-[320px] bg-accent/20 bottom-[-100px] left-[-80px]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative fade-in">
-              <div className="rounded-3xl overflow-hidden h-96 shadow-xl bg-white/70 backdrop-blur-xl flex items-center justify-center p-10 border border-white/60 hover:-translate-y-1 transition-transform duration-300">
+              <div className="glass rounded-3xl overflow-hidden h-96 shadow-xl flex items-center justify-center p-10 hover:-translate-y-1 transition-transform duration-300">
                 <img
                   src="/images/logo.jpg"
                   alt="Wellstar Drilling logo"
@@ -354,8 +359,13 @@ export default function Home() {
       </section>
 
       {/* ===== TEAM ===== */}
-      <section id="team" className="py-14 sm:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        id="team"
+        className="relative overflow-hidden py-14 sm:py-24 bg-gray-50"
+      >
+        <div className="blob w-[380px] h-[380px] bg-accent-light/30 top-[-100px] left-[10%]" />
+        <div className="blob w-[300px] h-[300px] bg-primary-light/20 bottom-[-80px] right-[5%]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14 fade-in">
             <span className="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-widest">
               <span className="w-6 h-px bg-accent" aria-hidden="true" />
@@ -424,7 +434,7 @@ export default function Home() {
             ].map((member) => (
               <div
                 key={member.name}
-                className={`team-card fade-in ${member.delay} bg-white/70 backdrop-blur-xl rounded-3xl p-5 sm:p-6 shadow-sm border border-white/60 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
+                className={`team-card glass fade-in ${member.delay} rounded-3xl p-5 sm:p-6 shadow-sm text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
               >
                 <div
                   className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden mx-auto mb-4 ring-4 ${member.ring}`}
@@ -449,8 +459,13 @@ export default function Home() {
       </section>
 
       {/* ===== SERVICES ===== */}
-      <section id="services" className="py-14 sm:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        id="services"
+        className="relative overflow-hidden py-14 sm:py-24 bg-gray-50"
+      >
+        <div className="blob w-[400px] h-[400px] bg-primary-light/20 top-[-120px] right-[-100px]" />
+        <div className="blob w-[280px] h-[280px] bg-accent/25 bottom-[-60px] left-[-60px]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 fade-in">
             <span className="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-widest">
               <span className="w-6 h-px bg-accent" aria-hidden="true" />
@@ -496,7 +511,7 @@ export default function Home() {
             ].map((service, i) => (
               <div
                 key={service.title}
-                className={`service-card fade-in ${["", "delay-1", "delay-2"][i % 3]} relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 pb-16 shadow-sm border border-white/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
+                className={`service-card fade-in ${["", "delay-1", "delay-2"][i % 3]} relative glass rounded-3xl p-8 pb-16 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
               >
                 <div className="service-icon w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                   <svg
@@ -528,7 +543,7 @@ export default function Home() {
                 </a>
               </div>
             ))}
-            <div className="service-card fade-in delay-3 relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 pb-16 shadow-sm border border-white/60 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div className="service-card fade-in delay-3 relative glass rounded-3xl p-8 pb-16 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="service-icon w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                 <svg
                   className="w-7 h-7 text-primary"
@@ -708,8 +723,13 @@ export default function Home() {
       </section>
 
       {/* ===== GALLERY ===== */}
-      <section id="gallery" className="py-14 sm:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        id="gallery"
+        className="relative overflow-hidden py-14 sm:py-24 bg-gray-50"
+      >
+        <div className="blob w-[360px] h-[360px] bg-accent-light/30 top-[-100px] right-[15%]" />
+        <div className="blob w-[300px] h-[300px] bg-primary-light/20 bottom-[-100px] left-[-60px]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 fade-in">
             <span className="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-widest">
               <span className="w-6 h-px bg-accent" aria-hidden="true" />
@@ -797,7 +817,7 @@ export default function Home() {
             ].map((t, i) => (
               <div
                 key={t.initials}
-                className={`bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:bg-white/15 hover:-translate-y-1 transition-all duration-300 fade-in ${["", "delay-1", "delay-2"][i % 3]}`}
+                className={`glass-dark rounded-3xl p-8 hover:bg-white/15 hover:-translate-y-1 transition-all duration-300 fade-in ${["", "delay-1", "delay-2"][i % 3]}`}
               >
                 <div className="flex gap-1 mb-4">
                   <span className="text-yellow-400">★★★★★</span>
@@ -821,8 +841,13 @@ export default function Home() {
       </section>
 
       {/* ===== CONTACT ===== */}
-      <section id="contact" className="py-14 sm:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        id="contact"
+        className="relative overflow-hidden py-14 sm:py-24 bg-gray-50"
+      >
+        <div className="blob w-[420px] h-[420px] bg-primary-light/20 top-[-140px] left-[-100px]" />
+        <div className="blob w-[320px] h-[320px] bg-accent/20 bottom-[-100px] right-[-80px]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 fade-in">
             <span className="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-widest">
               <span className="w-6 h-px bg-accent" aria-hidden="true" />
@@ -952,7 +977,7 @@ export default function Home() {
             {/* Form */}
             <form
               id="contact-form"
-              className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-xl border border-white/60 p-8 space-y-5 fade-in delay-2"
+              className="glass rounded-3xl shadow-xl p-8 space-y-5 fade-in delay-2"
             >
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
