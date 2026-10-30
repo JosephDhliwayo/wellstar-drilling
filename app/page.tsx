@@ -285,7 +285,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative fade-in">
-              <div className="rounded-3xl overflow-hidden h-96 shadow-lg bg-white flex items-center justify-center p-10 border border-gray-100">
+              <div className="rounded-3xl overflow-hidden h-96 shadow-xl bg-white/70 backdrop-blur-xl flex items-center justify-center p-10 border border-white/60 hover:-translate-y-1 transition-transform duration-300">
                 <img
                   src="/images/logo.jpg"
                   alt="Wellstar Drilling logo"
@@ -302,10 +302,11 @@ export default function Home() {
             </div>
 
             <div className="fade-in delay-2">
-              <span className="text-accent font-semibold text-sm uppercase tracking-widest">
+              <span className="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-widest">
+                <span className="w-6 h-px bg-accent" aria-hidden="true" />
                 Who We Are
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mt-2 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mt-2 mb-6">
                 Zimbabwe&apos;s Water Access{" "}
                 <span className="text-primary">Partner</span>
               </h2>
@@ -356,10 +357,11 @@ export default function Home() {
       <section id="team" className="py-14 sm:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14 fade-in">
-            <span className="text-accent font-semibold text-sm uppercase tracking-widest">
+            <span className="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-widest">
+              <span className="w-6 h-px bg-accent" aria-hidden="true" />
               The People Behind The Work
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mt-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mt-2">
               Meet Our Team
             </h2>
             <p className="text-gray-500 mt-4">
@@ -422,7 +424,7 @@ export default function Home() {
             ].map((member) => (
               <div
                 key={member.name}
-                className={`team-card fade-in ${member.delay} bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}
+                className={`team-card fade-in ${member.delay} bg-white/70 backdrop-blur-xl rounded-3xl p-5 sm:p-6 shadow-sm border border-white/60 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
               >
                 <div
                   className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden mx-auto mb-4 ring-4 ${member.ring}`}
@@ -450,10 +452,11 @@ export default function Home() {
       <section id="services" className="py-14 sm:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 fade-in">
-            <span className="text-accent font-semibold text-sm uppercase tracking-widest">
+            <span className="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-widest">
+              <span className="w-6 h-px bg-accent" aria-hidden="true" />
               Our Services
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mt-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mt-2">
               Everything you need.{" "}
               <span className="text-primary">One water partner.</span>
             </h2>
@@ -612,10 +615,11 @@ export default function Home() {
       <section id="projects" className="py-14 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 fade-in">
-            <span className="text-accent font-semibold text-sm uppercase tracking-widest">
+            <span className="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-widest">
+              <span className="w-6 h-px bg-accent" aria-hidden="true" />
               Our Work
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mt-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mt-2">
               Projects Across Zimbabwe
             </h2>
             <p className="text-gray-500 mt-4">
@@ -671,7 +675,7 @@ export default function Home() {
             ].map((project, i) => (
               <div
                 key={project.title}
-                className={`group relative rounded-2xl overflow-hidden h-72 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 fade-in ${["", "delay-1", "delay-2"][i % 3]}`}
+                className={`group relative rounded-3xl overflow-hidden h-72 shadow-sm border border-white/60 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 fade-in ${["", "delay-1", "delay-2"][i % 3]}`}
               >
                 <img
                   src={`/images/${project.img}`}
@@ -707,10 +711,11 @@ export default function Home() {
       <section id="gallery" className="py-14 sm:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 fade-in">
-            <span className="text-accent font-semibold text-sm uppercase tracking-widest">
+            <span className="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-widest">
+              <span className="w-6 h-px bg-accent" aria-hidden="true" />
               Behind The Work
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mt-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mt-2">
               On The Ground
             </h2>
             <p className="text-gray-500 mt-4">
@@ -739,7 +744,7 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={item.img}
-                className={`group relative overflow-hidden rounded-xl aspect-square fade-in ${["", "delay-1", "delay-2", "delay-3"][i % 4]}`}
+                className={`group relative overflow-hidden rounded-2xl aspect-square fade-in ${["", "delay-1", "delay-2", "delay-3"][i % 4]}`}
               >
                 <img
                   src={`/images/${item.img}`}
@@ -758,10 +763,11 @@ export default function Home() {
       <section className="py-20 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 fade-in">
-            <span className="text-accent-light font-semibold text-sm uppercase tracking-widest">
+            <span className="inline-flex items-center gap-2 text-accent-light font-semibold text-sm uppercase tracking-widest">
+              <span className="w-6 h-px bg-accent-light" aria-hidden="true" />
               Testimonials
             </span>
-            <h2 className="text-3xl font-extrabold mt-2">
+            <h2 className="text-3xl font-extrabold tracking-tight mt-2">
               What Our Clients Say
             </h2>
           </div>
@@ -791,7 +797,7 @@ export default function Home() {
             ].map((t, i) => (
               <div
                 key={t.initials}
-                className={`bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20 fade-in ${["", "delay-1", "delay-2"][i % 3]}`}
+                className={`bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:bg-white/15 hover:-translate-y-1 transition-all duration-300 fade-in ${["", "delay-1", "delay-2"][i % 3]}`}
               >
                 <div className="flex gap-1 mb-4">
                   <span className="text-yellow-400">★★★★★</span>
@@ -818,10 +824,11 @@ export default function Home() {
       <section id="contact" className="py-14 sm:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 fade-in">
-            <span className="text-accent font-semibold text-sm uppercase tracking-widest">
+            <span className="inline-flex items-center gap-2 text-accent font-semibold text-sm uppercase tracking-widest">
+              <span className="w-6 h-px bg-accent" aria-hidden="true" />
               Get In Touch
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mt-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mt-2">
               Request a Free Quote
             </h2>
             <p className="text-gray-500 mt-4">
@@ -945,7 +952,7 @@ export default function Home() {
             {/* Form */}
             <form
               id="contact-form"
-              className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 space-y-5 fade-in delay-2"
+              className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-xl border border-white/60 p-8 space-y-5 fade-in delay-2"
             >
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
