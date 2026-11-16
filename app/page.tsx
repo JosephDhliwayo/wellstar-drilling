@@ -438,6 +438,13 @@ export default function Home() {
                 ring: "ring-accent/20",
                 delay: "delay-2",
               },
+              {
+                img: "team-09.jpg",
+                name: "C. Denenga",
+                role: "Brand Ambassador",
+                ring: "ring-primary/20",
+                delay: "delay-3",
+              },
             ].map((member) => (
               <div
                 key={member.name}
