@@ -445,6 +445,13 @@ export default function Home() {
                 ring: "ring-primary/20",
                 delay: "delay-3",
               },
+              {
+                img: "team-10.jpg",
+                name: "B. Poshayi",
+                role: "Chief Engineer",
+                ring: "ring-primary/15",
+                delay: "delay-1",
+              },
             ].map((member) => (
               <div
                 key={member.name}
